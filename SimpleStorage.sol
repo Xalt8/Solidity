@@ -14,3 +14,8 @@ contract SimpleStorage{
     }
 
 }
+
+// Better to upload the data to IPFS a peer-to-peer datastorage service
+// When you upload the data to IPFS you get a hash and use that hash in your
+// contract to access the data. Store data for cheap and let eveyone else know
+// where your data is stored.
