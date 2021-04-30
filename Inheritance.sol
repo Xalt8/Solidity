@@ -19,5 +19,8 @@ contract A {
 }
 
 contract B is A {
-
+    
+    function getContractName() public pure returns (string memory) {
+        return "Contract B";
+    }
 }
