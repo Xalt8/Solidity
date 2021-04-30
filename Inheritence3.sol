@@ -10,7 +10,7 @@ contract X {
 contract Y {
     string public text;
     constructor(string memory _text) public {
-
+        text = _text;
     }
 }
 
