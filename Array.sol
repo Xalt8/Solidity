@@ -61,8 +61,5 @@ contract CompactArray{
         assert(myArray.length == 2);
         assert(myArray[0] == 1);
         assert(myArray[1] == 4);
-        
-
-
     }   
 }
