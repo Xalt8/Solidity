@@ -12,22 +12,22 @@ pragma solidity ^0.5.3;
 
         Status public status;
 
-        function ship() public {
+        function ship() view public {
             require(status == Status.Pending);
             status == Status.Shipped;
         }
 
-        function acceptDelivery() public {
+        function acceptDelivery() view public {
             require(status == Status.Shipped);
             status == Status.Accepted;    
         }
 
-        function rejectDelivery() public {
+        function rejectDelivery() view public {
             require(status == Status.Shipped);
             status == Status.Rejected;
         }
 
-        function cancelled() public {
+        function cancelled() view public {
             require(status == Status.Pending);
             status == Status.Canceled;
         }
