@@ -34,7 +34,8 @@ contract ToDos {
         */
         }
         
-        function get(uint _index) public view returns(string memory, bool) {
+        // Don't really need this because Solidity automatically creates getters
+        function get(uint _index) public view returns(string memory text, bool completed) {
             // Data is stored in a state variable -> storage
             Todo storage todo = todos[_index];
             return (todo.text, todo.completed); 
