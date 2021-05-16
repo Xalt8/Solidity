@@ -26,6 +26,16 @@ contract HashFunction {
         return keccak256(abi.encodePacked(_text, _num, _addr));
     }
 
-
+    function collision(string memory _text, string memory _anotherText)
+    public pure returns (bytes32){
+        // encodePacked concatenates the 2 strings
+        // AAA BBB -> AAABBB
+        // AA ABBB -> AAABBB
+        // When working with more 1 dynamic data types (String)
+        // use encode instead of encodePacked
+        
+        // return keccak256(abi.encodePacked(_text, _anotherText));
+        return keccak256(abi.encode(_text, _anotherText));
+    }
 
 }
