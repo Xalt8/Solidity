@@ -37,3 +37,30 @@ contract TestSafeMath {
         return x.add(y);
     }
 }
+
+library Array {
+
+    function remove(uint[] storage arr, uint index) public {
+        arr[index] = arr[arr.length-1];
+        arr.pop();
+    }
+}
+
+contract TestArray{
+
+    using Array for uint[];
+
+    uint[] public arr;
+
+    function testArrayRemove() public{
+        for(uint i = 0; i < 3; i++){
+            arr.push(i);
+        }// [0,1,2]
+
+        arr.remove(1); //remove 1
+        assert(arr.length == 2);
+        assert(arr[0]==0);
+        assert(arr[1]==2);
+    }
+
+}
